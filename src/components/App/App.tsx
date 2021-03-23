@@ -8,6 +8,7 @@ import { H1 } from "~src/ui/";
 import { H2 } from "~src/ui/";
 import { TimesWrapper } from "~src/ui/";
 import { TimesZonesWrapper } from "~src/ui/";
+import { SynchronizeButtonSizes } from "~src/ui/";
 
 const App: React.FC = () => {
   return (
@@ -23,7 +24,7 @@ const App: React.FC = () => {
           <DateTime />
         </TimesZonesWrapper>
       </TimesWrapper>
-      <SynchronizeTimeZone />
+      <SynchronizeTimeZone size={SynchronizeButtonSizes.medium} />
     </Container>
   );
 };

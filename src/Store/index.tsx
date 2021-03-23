@@ -1,11 +1,11 @@
-import { createStore, applyMiddleware } from 'redux';
-import thunk from 'redux-thunk';
-import reducer from './reducers';
+import { createStore, applyMiddleware } from "redux";
+import thunk from "redux-thunk";
+import reducer from "./reducers";
 
 const logger = (store: any) => (next: any) => (action: any) => {
-  console.log('dispatching', action);
+  console.log("dispatching", action);
   const result = next(action);
-  console.log('next state', store.getState());
+  console.log("next state", store.getState());
   return result;
 };
 
