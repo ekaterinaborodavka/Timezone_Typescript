@@ -11,7 +11,7 @@ const Container = styled.div`
   border: 1px solid black;
 `;
 
-interface DateTimeProps {
+export interface DateTimeProps {
   date: Date;
 }
 
