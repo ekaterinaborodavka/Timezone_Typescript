@@ -1,7 +1,7 @@
 import React from "react";
 import { Meta, Story } from "@storybook/react/types-6-0";
-import { withKnobs } from "@storybook/addon-knobs";
-import { DateTimeString, DateTimeProps } from "./DateTimeString";
+import { withKnobs, date, optionsKnob } from "@storybook/addon-knobs";
+import { DateTimeString, DateTimeProps, DateFormatVariant } from "./DateTimeString";
 
 export default {
   title: "DateTimeString",
@@ -9,9 +9,11 @@ export default {
   decorators: [withKnobs],
 } as Meta;
 
-const Template: Story<DateTimeProps> = (args) => <DateTimeString {...args} />;
-
-export const Default = Template.bind({});
-Default.args = {
-  date: new Date(),
+export const Default: Story<DateTimeProps> = () => {
+  return (
+    <DateTimeString
+      formatDate={optionsKnob("Format", DateFormatVariant, DateFormatVariant.fullDate, { display: "select" })}
+      date={date("Date", new Date())}
+    />
+  );
 };

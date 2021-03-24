@@ -2,45 +2,76 @@ import styled, { css } from "styled-components/macro";
 
 export enum SynchronizeButtonSizes {
   // eslint-disable-next-line no-unused-vars
-  large,
+  large = "large",
   // eslint-disable-next-line no-unused-vars
-  medium,
+  medium = "medium",
   // eslint-disable-next-line no-unused-vars
-  small,
+  small = "small",
+}
+
+export enum SynchronizeButtonColors {
+  // eslint-disable-next-line no-unused-vars
+  green = "green",
+  // eslint-disable-next-line no-unused-vars
+  blue = "blue",
+  // eslint-disable-next-line no-unused-vars
+  orange = "orange",
+  // eslint-disable-next-line no-unused-vars
+  gray = "gray",
 }
 export interface SynchronizeButtonProps {
-  size: SynchronizeButtonSizes;
-  label?: string;
+  size?: SynchronizeButtonSizes;
+  color?: SynchronizeButtonColors;
 }
+
+const buttonSizeCSSMapping = {
+  [SynchronizeButtonSizes.large]: css`
+    width: 25%;
+    font-size: 1.1rem;
+  `,
+  [SynchronizeButtonSizes.medium]: css`
+    width: 20%;
+    font-size: 1rem;
+  `,
+  [SynchronizeButtonSizes.small]: css`
+    width: 15%;
+    font-size: 0.9rem;
+  `,
+};
+
+const buttonColorsdeCSSMapping = {
+  [SynchronizeButtonColors.green]: css`
+    color: rgb(45, 90, 45);
+    border: 2px solid rgb(45, 90, 45);
+  `,
+  [SynchronizeButtonColors.blue]: css`
+    color: rgb(99, 99, 170);
+    border: 2px solid rgb(99, 99, 170);
+  `,
+  [SynchronizeButtonColors.orange]: css`
+    color: rgb(184, 110, 42);
+    border: 2px solid rgb(184, 110, 42);
+  `,
+  [SynchronizeButtonColors.gray]: css`
+    color: rgb(145, 145, 145);
+    border: 2px solid rgb(145, 145, 145);
+  `,
+};
 
 export const SynchronizeButton = styled.button<SynchronizeButtonProps>`
   margin: auto;
   margin-top: 5%;
   padding: 0.5rem;
-  border: 2px solid rgb(45, 90, 45);
   background-color: transparent;
   border-radius: 15px;
   font-weight: bold;
-  color: rgb(45, 90, 45);
   :hover {
     opacity: 0.7;
   }
-  ${({ size }) =>
-    size === 0 &&
-    css`
-      width: 25%;
-      font-size: 1.1rem;
-    `}
-  ${({ size }) =>
-    size === 1 &&
-    css`
-      width: 20%;
-      font-size: 1rem;
-    `}
-  ${({ size }) =>
-    size === 2 &&
-    css`
-      width: 15%;
-      font-size: 0.9rem;
-    `}
+  ${({ size = SynchronizeButtonSizes.medium }) => {
+    return buttonSizeCSSMapping[size];
+  }}
+  ${({ color = SynchronizeButtonColors.green }) => {
+    return buttonColorsdeCSSMapping[color];
+  }}
 `;

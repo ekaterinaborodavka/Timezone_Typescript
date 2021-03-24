@@ -1,25 +1,24 @@
 import React from "react";
 import { Meta, Story } from "@storybook/react/types-6-0";
-import { withKnobs, text, color } from "@storybook/addon-knobs";
-import { SynchronizeButton, SynchronizeButtonProps, SynchronizeButtonSizes } from "./SynchronizeButton";
+import { withKnobs, text, optionsKnob } from "@storybook/addon-knobs";
+import {
+  SynchronizeButton,
+  SynchronizeButtonProps,
+  SynchronizeButtonSizes,
+  SynchronizeButtonColors,
+} from "./SynchronizeButton";
 
 export default {
-  title: "SynchronizeTimeZone",
+  title: "SynchronizeButton",
   component: SynchronizeButton,
   decorators: [withKnobs],
 } as Meta;
 
-const Template: Story<SynchronizeButtonProps> = (args) => (
+export const Default: Story<SynchronizeButtonProps> = () => (
   <SynchronizeButton
-    style={{ color: color("Color", "rgb(45, 90, 45)"), borderColor: color("Color", "rgb(45, 90, 45)") }}
-    {...args}
+    color={optionsKnob("Color", SynchronizeButtonColors, SynchronizeButtonColors.green, { display: "select" })}
+    size={optionsKnob("Size", SynchronizeButtonSizes, SynchronizeButtonSizes.medium, { display: "select" })}
   >
-    {args.label}
+    {text("TextButton", "SYNCHRONIZE TIME ZONE")}
   </SynchronizeButton>
 );
-
-export const Default = Template.bind({});
-Default.args = {
-  size: SynchronizeButtonSizes.medium,
-  label: text("Text", "SYNCHRONIZE TIME ZONE"),
-};
