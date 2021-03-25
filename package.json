@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@nrwl/eslint-plugin-nx": "^11.5.2",
+    "@react-theming/storybook-addon": "^1.1.1",
     "@storybook/addon-knobs": "^6.1.21",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -79,6 +80,7 @@
     "eslint-plugin-react": "^7.22.0",
     "eslint-plugin-standard": "^5.0.0",
     "prettier": "^2.2.1",
-    "prettier-eslint": "^12.0.0"
+    "prettier-eslint": "^12.0.0",
+    "storybook-dark-mode": "^1.0.7"
   }
 }

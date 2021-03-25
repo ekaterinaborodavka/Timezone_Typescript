@@ -1,12 +1,8 @@
 import React from "react";
 import { Meta, Story } from "@storybook/react/types-6-0";
 import { withKnobs, text, optionsKnob } from "@storybook/addon-knobs";
-import {
-  SynchronizeButton,
-  SynchronizeButtonProps,
-  SynchronizeButtonSizes,
-  SynchronizeButtonColors,
-} from "./SynchronizeButton";
+import { SynchronizeButton } from "./SynchronizeButton";
+import { SynchronizeButtonSizes, SynchronizeButtonColors, SynchronizeButtonProps } from "~src/type";
 
 export default {
   title: "SynchronizeButton",

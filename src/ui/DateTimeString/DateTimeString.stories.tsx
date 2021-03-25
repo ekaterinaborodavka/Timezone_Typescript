@@ -1,7 +1,8 @@
 import React from "react";
 import { Meta, Story } from "@storybook/react/types-6-0";
 import { withKnobs, date, optionsKnob } from "@storybook/addon-knobs";
-import { DateTimeString, DateTimeProps, DateFormatVariant } from "./DateTimeString";
+import { DateTimeString } from "./DateTimeString";
+import { DateTimeProps, DateFormatVariant } from "~src/type";
 
 export default {
   title: "DateTimeString",

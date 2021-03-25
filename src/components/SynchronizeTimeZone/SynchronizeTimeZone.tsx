@@ -7,9 +7,9 @@ import { SynchronizeButton } from "~src/ui/";
 export const SynchronizeTimeZone: React.FC = () => {
   const dispatch = useDispatch();
 
-  const onGetTime = useCallback(() => {
-    dispatch(actions.getTime());
+  const onSynchronizeTimeZone = useCallback(() => {
+    dispatch(actions.synchronizeTimeZone());
   }, [dispatch]);
 
-  return <SynchronizeButton onClick={onGetTime}>SYNCHRONIZE TIME ZONE</SynchronizeButton>;
+  return <SynchronizeButton onClick={onSynchronizeTimeZone}>SYNCHRONIZE TIME ZONE</SynchronizeButton>;
 };
