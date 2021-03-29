@@ -1,6 +1,6 @@
 import styled from "styled-components/macro";
 
-export const TimeSectionWrapper = styled.div`
+export const MainSectionWrapper = styled.div`
   display: flex;
   flex-direction: column;
   font-weight: bold;

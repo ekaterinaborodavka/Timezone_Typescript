@@ -5,7 +5,7 @@ import { categoryTimeZones } from "~src/mocks/CategoryTimeZone";
 import * as actions from "~src/Store/actions/actions";
 import { Select } from "~src/ui/";
 
-export const TimeZone: React.FC = () => {
+export const TimeZoneSelect: React.FC = () => {
   const dispatch = useDispatch();
 
   const onChange = useCallback(

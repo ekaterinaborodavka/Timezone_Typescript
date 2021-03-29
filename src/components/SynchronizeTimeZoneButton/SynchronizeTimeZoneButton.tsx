@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import * as actions from "~src/Store/actions/actions";
 import { SynchronizeButton } from "~src/ui/";
 
-export const SynchronizeTimeZone: React.FC = () => {
+export const SynchronizeTimeZoneButton: React.FC = () => {
   const dispatch = useDispatch();
 
   const onSynchronizeTimeZone = useCallback(() => {

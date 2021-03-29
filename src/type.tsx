@@ -5,11 +5,6 @@ export enum ThemeNames {
   light = "light",
 }
 
-export interface ChangeThemeButtonProps {
-  theme: ThemeNames;
-  children: React.ReactNode;
-}
-
 export enum DateFormatVariant {
   // eslint-disable-next-line no-unused-vars
   shortDate = "dd-MM-yyyy",
