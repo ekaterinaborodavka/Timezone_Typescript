@@ -1,5 +1,18 @@
-import { UPDATE_TIME_ZONE, SYNCHRONIZE_TIME_ZONE_DATE, CHANGE_THEME, TimeActionTypes } from "../types/types";
+import {
+  UPDATE_TIME_ZONE,
+  SYNCHRONIZE_TIME_ZONE_DATE,
+  CHANGE_THEME,
+  GET_TIMESTAMP,
+  TimeActionTypes,
+} from "../types/types";
 import { ThemeNames } from "~src/type";
+
+export const getTimestamp = (timestamp: number): TimeActionTypes => {
+  return {
+    type: GET_TIMESTAMP,
+    timestamp,
+  };
+};
 
 export const updateTimeZone = (value: number): TimeActionTypes => {
   return {

@@ -1,4 +1,11 @@
-import { UPDATE_TIME_ZONE, SYNCHRONIZE_TIME_ZONE_DATE, CHANGE_THEME, TimeActionTypes, Istate } from "../types/types";
+import {
+  UPDATE_TIME_ZONE,
+  SYNCHRONIZE_TIME_ZONE_DATE,
+  CHANGE_THEME,
+  GET_TIMESTAMP,
+  TimeActionTypes,
+  Istate,
+} from "../types/types";
 import { ThemeNames } from "~src/type";
 
 const initialState: Istate = {
@@ -9,6 +16,12 @@ const initialState: Istate = {
 
 const reducer = (state = initialState, action: TimeActionTypes): Istate => {
   switch (action.type) {
+    case GET_TIMESTAMP: {
+      return {
+        ...state,
+        date: new Date(action.timestamp),
+      };
+    }
     case UPDATE_TIME_ZONE: {
       return {
         ...state,
@@ -16,10 +29,10 @@ const reducer = (state = initialState, action: TimeActionTypes): Istate => {
       };
     }
     case SYNCHRONIZE_TIME_ZONE_DATE: {
-      const timestamp = Date.now() + state.timezone * 3600 * 1000;
+      const newTimestamp = Date.parse(state.date.toString()) + state.timezone * 3600 * 1000;
       return {
         ...state,
-        date: new Date(timestamp),
+        date: new Date(newTimestamp),
       };
     }
     case CHANGE_THEME: {

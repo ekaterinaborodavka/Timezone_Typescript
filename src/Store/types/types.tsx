@@ -1,8 +1,14 @@
 export const UPDATE_TIME_ZONE = "UPDATE_TIME_ZONE";
 export const SYNCHRONIZE_TIME_ZONE_DATE = "SYNCHRONIZE_TIME_ZONE_DATE";
 export const CHANGE_THEME = "CHANGE_THEME";
+export const GET_TIMESTAMP = "GET_TIMESTAMP";
 import { ThemeNames } from "~src/type";
-interface GetTimeAction {
+
+interface GetTimestampAction {
+  type: typeof GET_TIMESTAMP;
+  timestamp: number;
+}
+interface SynchronizeTimeAction {
   type: typeof SYNCHRONIZE_TIME_ZONE_DATE;
 }
 
@@ -16,7 +22,7 @@ interface ChangeThemeAction {
   theme: ThemeNames;
 }
 
-export type TimeActionTypes = GetTimeAction | UpdateTimeZoneAction | ChangeThemeAction;
+export type TimeActionTypes = SynchronizeTimeAction | UpdateTimeZoneAction | ChangeThemeAction | GetTimestampAction;
 
 export interface Istate {
   date: Date;
