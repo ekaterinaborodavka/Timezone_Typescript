@@ -14,16 +14,15 @@ import { ThemeButtons } from "~src/components/ThemeButtons/ThemeButtons";
 import { Istate } from "~src/Store/types/types";
 import { theme } from "~src/theme/theme";
 import { ThemeNames } from "~src/type";
-import { get } from "~src/Services/networkProvider";
+import { getGurrentTimestamp } from "~src/api/getCurrentTimestamp";
 import * as actions from "~src/Store/actions/actions";
 
 const App: React.FC = () => {
   const dispatch = useDispatch();
   const themeVariant = useSelector<Istate, ThemeNames>((state: Istate) => state.theme);
-  const url = "https://showcase.api.linx.twenty57.net/UnixTime/tounixtimestamp?datetime=now";
 
   useEffect(() => {
-    get(url).then((res) => dispatch(actions.getTimestamp(+res.UnixTimeStamp)));
+    getGurrentTimestamp().then((res) => dispatch(actions.setDate(parseInt(res.UnixTimeStamp))));
   }, [dispatch]);
 
   return (

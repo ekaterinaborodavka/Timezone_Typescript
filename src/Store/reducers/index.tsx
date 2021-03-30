@@ -2,7 +2,7 @@ import {
   UPDATE_TIME_ZONE,
   SYNCHRONIZE_TIME_ZONE_DATE,
   CHANGE_THEME,
-  GET_TIMESTAMP,
+  SET_DATE,
   TimeActionTypes,
   Istate,
 } from "../types/types";
@@ -16,7 +16,7 @@ const initialState: Istate = {
 
 const reducer = (state = initialState, action: TimeActionTypes): Istate => {
   switch (action.type) {
-    case GET_TIMESTAMP: {
+    case SET_DATE: {
       return {
         ...state,
         date: new Date(action.timestamp),

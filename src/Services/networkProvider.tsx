@@ -1,4 +1,4 @@
-interface getTimestampString {
+export interface getTimestampString {
   UnixTimeStamp: string;
 }
 

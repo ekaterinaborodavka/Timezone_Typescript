@@ -6,6 +6,5 @@ import { DateTimeString } from "~src/ui/";
 
 export const DateTime: React.FC = () => {
   const date = useSelector((state: Istate) => state.date);
-
   return <DateTimeString date={date} />;
 };
