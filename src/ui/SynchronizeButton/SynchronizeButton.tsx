@@ -1,28 +1,5 @@
 import styled, { css } from "styled-components/macro";
-
-export enum SynchronizeButtonSizes {
-  // eslint-disable-next-line no-unused-vars
-  large = "large",
-  // eslint-disable-next-line no-unused-vars
-  medium = "medium",
-  // eslint-disable-next-line no-unused-vars
-  small = "small",
-}
-
-export enum SynchronizeButtonColors {
-  // eslint-disable-next-line no-unused-vars
-  green = "green",
-  // eslint-disable-next-line no-unused-vars
-  blue = "blue",
-  // eslint-disable-next-line no-unused-vars
-  orange = "orange",
-  // eslint-disable-next-line no-unused-vars
-  gray = "gray",
-}
-export interface SynchronizeButtonProps {
-  size?: SynchronizeButtonSizes;
-  color?: SynchronizeButtonColors;
-}
+import { SynchronizeButtonSizes, SynchronizeButtonColors, SynchronizeButtonProps } from "~src/type";
 
 const buttonSizeCSSMapping = {
   [SynchronizeButtonSizes.large]: css`
@@ -39,7 +16,7 @@ const buttonSizeCSSMapping = {
   `,
 };
 
-const buttonColorsdeCSSMapping = {
+const buttonColorsCSSMapping = {
   [SynchronizeButtonColors.green]: css`
     color: rgb(45, 90, 45);
     border: 2px solid rgb(45, 90, 45);
@@ -72,6 +49,6 @@ export const SynchronizeButton = styled.button<SynchronizeButtonProps>`
     return buttonSizeCSSMapping[size];
   }}
   ${({ color = SynchronizeButtonColors.green }) => {
-    return buttonColorsdeCSSMapping[color];
+    return buttonColorsCSSMapping[color];
   }}
 `;

@@ -5,8 +5,8 @@ export const H1 = styled.h1`
   font-size: 2.5rem;
   width: 100%;
   text-align: center;
-  background-color: rgb(80, 156, 80);
-  color: white;
-  padding: 2rem 0;
+  background-color: ${(props) => props.theme.main};
+  color: ${(props) => props.theme.textColor};
+  padding: 1rem 0 2rem 0;
   margin: 0 0 2rem 0;
 `;
