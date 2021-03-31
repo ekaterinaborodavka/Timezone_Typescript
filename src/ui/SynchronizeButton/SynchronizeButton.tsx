@@ -16,7 +16,7 @@ const buttonSizeCSSMapping = {
   `,
 };
 
-const buttonColorsdeCSSMapping = {
+const buttonColorsCSSMapping = {
   [SynchronizeButtonColors.green]: css`
     color: rgb(45, 90, 45);
     border: 2px solid rgb(45, 90, 45);
@@ -49,6 +49,6 @@ export const SynchronizeButton = styled.button<SynchronizeButtonProps>`
     return buttonSizeCSSMapping[size];
   }}
   ${({ color = SynchronizeButtonColors.green }) => {
-    return buttonColorsdeCSSMapping[color];
+    return buttonColorsCSSMapping[color];
   }}
 `;

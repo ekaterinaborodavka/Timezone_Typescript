@@ -8,7 +8,8 @@ import {MainWrapper} from '~src/ui/MainWrapper/MainWrapper'
 import { MainSectionWrapper } from '~src/ui/MainSectionWrapper/MainSectionWrapper'
 import { ThemeButton } from '~src/ui/ThemeButton/ThemeButton'
 
-export { Container,
+export {
+    Container,
     DateTimeString,
     H1,
     H2,

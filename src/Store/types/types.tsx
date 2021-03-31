@@ -8,7 +8,7 @@ interface GetTimestampAction {
   type: typeof SET_DATE;
   timestamp: number;
 }
-interface SynchronizeTimeAction {
+interface SynchronizeTimeZoneAction {
   type: typeof SYNCHRONIZE_TIME_ZONE_DATE;
 }
 
@@ -22,7 +22,7 @@ interface ChangeThemeAction {
   theme: ThemeNames;
 }
 
-export type TimeActionTypes = SynchronizeTimeAction | UpdateTimeZoneAction | ChangeThemeAction | GetTimestampAction;
+export type TimeActionTypes = SynchronizeTimeZoneAction | UpdateTimeZoneAction | ChangeThemeAction | GetTimestampAction;
 
 export interface Istate {
   date: Date;

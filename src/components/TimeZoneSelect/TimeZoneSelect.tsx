@@ -17,7 +17,7 @@ export const TimeZoneSelect: React.FC = () => {
 
   return (
     <Select onChange={onChange}>
-      <option> Select time zone </option>
+      <option value={0}> Select time zone </option>
       <>
         {categoryTimeZones.map(({ id, name, timeZone, value }) => (
           <option key={id} value={value}>
